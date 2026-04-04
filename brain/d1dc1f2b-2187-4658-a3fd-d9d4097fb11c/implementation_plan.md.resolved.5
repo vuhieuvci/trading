@@ -1,0 +1,53 @@
+# Risk-Based Management & Advanced Review System
+
+This upgrade shifts the journal from a simple tracking tool to a professional risk management system, focusing on position sizing and detailed trade retrospective.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Position Sizing:** I will replace the "Leverage/Margin" fields with **"% Risk"** or **"Risk Amount ($)"**. The system will automatically calculate the **Position Volume** based on your SL distance.
+
+> [!NOTE]
+> **Calendar Navigation:** The Profit Calendar will now feature **Prev/Next** buttons to navigate through months, and clicking a day will show the trades for that specific day.
+
+## Proposed Changes
+
+### [Form & Logic Update]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- **Trade Form**: 
+  - Remove "Đòn bẩy" and "Ký quỹ".
+  - Add **"Rủi ro (%)"** (e.g., 1%, 2%).
+  - Add a read-only **"Khối lượng (Volume)"** display.
+- **Trade Detail Modal**: 
+  - Create a new modal `modal-detail` to show high-res charts and all trade notes.
+- **Calendar**: 
+  - Add Month/Year navigation headers.
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Styles for the calculated volume display.
+- Layout for the trade detail view (Split screen: Info vs Image).
+- Pagination-style buttons for the calendar.
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Position Sizing Logic**: 
+  - `Volume = (TotalAssets * Risk%) / |Entry - SL|`.
+- **Edit/Delete Logic**: 
+  - Implement dynamic form pre-filling for editing existing trades.
+- **Calendar Navigation**: 
+  - Store current month/year state for the calendar view.
+- **Detail View**: 
+  - Function to fetch image from IndexedDB and display in the new detail modal.
+
+## Open Questions
+
+1. When calculating **Volume**, do you want it to automatically use your **Current Total Assets** as the base, or would you like to specify a fixed amount for the calculation?
+2. For the **Edit** feature, should it allow changing the **Entry Date** as well?
+
+## Verification Plan
+
+### Manual Verification
+- **Position Sizing:** Enter Entry: 100, SL: 95, Risk: 1%, Total Assets: 1000. Verify Volume is 2 units (Risk $10 / $5 per unit).
+- **Editing:** Open an old trade, change the "Pair", save it, and verify the list updates without creating a duplicate.
+- **Calendar:** Navigate to the previous month, verify the P/L entries match historical data.
+- **Detail View:** Click "Xem chi tiết" on a trade with an image, verify the image renders correctly in the modal.

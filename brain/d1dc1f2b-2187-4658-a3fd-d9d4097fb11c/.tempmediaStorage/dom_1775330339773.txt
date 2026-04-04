@@ -1,0 +1,81 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Hieu's Journal
+Bảng điều khiển
+Nhật ký lệnh
+Phân tích
+Cài đặt
+Trading Journal v1.0
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+Thêm lệnh mới
+Tổng Lợi nhuận (P/L)
+$17.50
+Tỷ lệ thắng (Win Rate)
+100.0%
+Tổng số lệnh
+3
+Lỗi hay gặp nhất
+Chốt non
+Lệnh gần đây
+Cặp/Vị thế
+Entry
+Leverage
+Margin
+P/L (%)
+Trạng thái
+SOL/USDT
+long
+$150
+x10
+$50
++15%
+4/5/2026
+BTC/USDT
+long
+$67185
+x60
+$80
+Đang chạy
+Chốt lệnh
+BTC/USDT
+long
+$60000
+x10
+$100
++10%
+4/5/2026
+Thêm lệnh mới
+[0] (792,173)<button id='btn-close-modal' />
+[1] (344,216)<label >Cặp giao dịch (BTC/USDT, SOL/USDT...) />
+[2] (344,244)<input id='input-pair' placeholder='Ví dụ: BTC/USDT' />
+[3] (656,216)<label >Vị thế />
+[4] (656,245)<select id='input-position' />
+[5] (344,302)<label >Loại lệnh />
+[6] (344,331)<select id='input-type' />
+[7] (656,302)<label >Đòn bẩy (x) />
+[8] (656,331)<input id='input-leverage' />
+[9] (344,389)<label >Ký quỹ (Margin - USD) />
+[10] (344,417)<input id='input-margin' />
+[11] (656,389)<label >Giá vào (Entry Price) />
+[12] (656,417)<input id='input-entry' />
+[13] (344,473)<label >Cắt lỗ (Stop Loss) />
+[14] (344,502)<input id='input-sl' />
+[15] (656,473)<label >Chốt lời (Take Profit) />
+[16] (656,502)<input id='input-tp' />
+[17] (500,541)<label >Lý do vào lệnh />
+[18] (500,570)<select id='input-reason' />
+[19] (500,611)<label >Link ảnh biểu đồ (TradingView) />
+[20] (500,639)<input id='input-chart' placeholder='https://www.tradingview.com/x/...' />
+[21] (344,678)<label >P/L thực tế (%) - Để trống nếu lệnh đang chạy />
+[22] (344,707)<input id='input-pl' />
+[23] (656,678)<label >Tâm lý lúc đánh />
+[24] (656,707)<select id='input-psychology' />
+[25] (500,748)<label >Lỗi thường gặp (nếu có) />
+[26] (500,777)<select id='input-mistake' />
+[27] (669,824)<button class='btn-primary' id='btn-cancel'>Hủy />
+[28] (758,824)<button class='btn-primary'>Lưu lệnh />
+
+</current_dom>

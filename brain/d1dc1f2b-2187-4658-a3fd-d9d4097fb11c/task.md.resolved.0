@@ -1,0 +1,9 @@
+- [ ] Initialize Vite React project
+- [ ] Install dependencies (Lucide icons, Recharts)
+- [ ] Create design system in `index.css` (Dark mode, Glassmorphism)
+- [ ] Create `useJournal` hook for local storage persistence
+- [ ] Implement `TradeForm` component with all required fields
+- [ ] Implement `Dashboard` component with stats (Win Rate, P/L, Mistakes)
+- [ ] Implement `TradeList` component for trade history
+- [ ] Build main layout in `App.jsx`
+- [ ] Final verification and testing

@@ -1,0 +1,41 @@
+# REAL-TIME DATA & FINANCIAL CLARITY
+
+This update focuses on making the dashboard more "alive" with live market data and shifting from percentage-based metrics to actual dollar profits for better financial tracking.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Profit Display:** All P/L displays (Dashboard and Journal) will now show the absolute dollar amount (e.g., **+$100.50**) instead of **+3.5%**. This provides a more immediate sense of your actual gains and losses.
+
+> [!TIP]
+> **Live Market Data:** I will integrate a **TradingView Ticker Widget** to show real-time prices for **BTC/USDT**, **ETH/USDT**, and **SOL/USDT** directly in your dashboard. This saves you from switching tabs constantly.
+
+## Proposed Changes
+
+### [Dashboard & UI Upgrades]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- **Market Data Component**: Add a placeholder container for the TradingView real-time widget.
+- **Header Update**: Change "P/L %" labels to "Lợi nhuận ($)".
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Style the **Live Ticker** section to blend with the Glassmorphism theme.
+- Enhance the **Delete (Trash)** button visibility in the journal.
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Live Widgets**: Implement a function to inject the TradingView Market Widget script.
+- **Currency Data Rendering**: 
+  - Update `renderDashboard` and `renderJournal` to format values as USD currency.
+  - Implement the `deleteTrade` functionality with a confirmation prompt.
+
+## Open Questions
+
+1. Aside from BTC, ETH, and SOL, are there any other specific pairs you want to track in the real-time table?
+2. Do you want the **EW Score** (Discipline Score) to remain as a number/percentage, or should that also be changed/removed?
+
+## Verification Plan
+
+### Manual Verification
+- **Real-time Check:** Confirm at least 3 prices are updating live on the dashboard.
+- **Dollar Math:** Verify that a trade closed with $50 profit shows as **+$50.00** exactly.
+- **Management:** Delete a test trade and confirm the dashboard stats (Total Assets, P/L) update immediately.

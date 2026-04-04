@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Trading Journal - Nhật ký Giao dịch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Auth Container -->
+    <div id="auth-container" class="auth-wrapper">
+        <div class="auth-box">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <i data-lucide="trending-up" style="width: 48px; height: 48px; color: var(--accent-color);"></i>
+                <h1 style="margin-top: 1rem;">Trading Journal</h1>
+                <p style="color: var(--text-secondary);">Đăng nhập để vào không gian của bạn</p>
+            </div>
+            
+            <div id="auth-form-login">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" id="login-username" required placeholder="Nhập tên đăng nhập...">
+                    </div>
+                    <div class="form-group" style="position: relative;">
+                        <label>Mật khẩu</label>
+                        <input type="password" id="login-password" required placeholder="Nhập mật khẩu...">
+                        <a href="#" id="link-forgot-password" style="position: absolute; right: 0; top: 0; font-size: 0.8rem; color: var(--accent-color); text-decoration: none;">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Đăng nhập</button>
+                    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Chưa có tài khoản? <a href="#" id="link-to-register" style="color: var(--accent-color); text-decoration: none;">Đăng ký ngay</a>
+                    </p>
+                </form>
+            </div>
+
+            <div id="auth-form-register" style="display: none;">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label>Tên đăng nhập mới</label>
+                        <input type="text" id="register-username" required placeholder="Tạo tên đăng nhập...">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="register-email" required placeholder="Nhập địa chỉ email...">
+                    </div>
+                    <div class="form-group">
+                        <label>Tạo Mật khẩu</label>
+                        <input type="password" id="register-password" required placeholder="Tạo mật khẩu...">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Đăng ký</button>
+                    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Đã có tài khoản? <a href="#" id="link-to-login" style="color: var(--accent-color); text-decoration: none;">Đăng nhập</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container" id="app-container" style="display: none;">
+        <!-- Sidebar -->
+        <aside>
+            <div class="logo">
+                <i data-lucide="trending-up"></i>
+                VCI's Journal
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" id="nav-dashboard">
+                        <i data-lucide="layout-dashboard"></i> Bảng điều khiển
+                    </li>
+                    <li id="nav-journal">
+                        <i data-lucide="book-open"></i> Nhật ký lệnh
+                    </li>
+                    <li id="nav-analytics">
+                        <i data-lucide="pie-chart"></i> Phân tích
+                    </li>
+                    <li id="nav-settings">
+                        <i data-lucide="settings"></i> Cài đặt
+                    </li>
+                    <li id="nav-admin" style="display: none;">
+                        <i data-lucide="shield"></i> Quản trị viên
+                    </li>
+                </ul>
+            </nav>
+            <div id="sidebar-footer" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--card-border);">
+                <p style="font-size: 0.75rem; color: var(--text-secondary); text-align: center; margin-top: 1rem;">Trading Journal v2.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <header>
+                <div>
+                    <h1 id="page-title">Chào buổi sáng!</h1>
+                    <p style="color: var(--text-secondary);">Hôm nay kế hoạch giao dịch của bạn thế nào?</p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-icon" id="btn-privacy-toggle" title="Chế độ riêng tư">
+                        <i data-lucide="eye"></i>
+                    </button>
+                    <button class="btn-primary" id="btn-add-trade">
+                        <i data-lucide="plus"></i> Thêm lệnh mới
+                    </button>
+                    <button id="btn-logout" class="btn-icon" style="color: var(--danger-color); border-color: rgba(255, 68, 68, 0.2);" title="Đăng xuất">
+                        <i data-lucide="log-out"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Market Ticker -->
+            <div id="market-ticker" style="margin: 0 1.5rem 1.5rem 1.5rem; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid var(--card-border);">
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="view-dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="label">Tổng Tài sản</div>
+                        <div class="value privacy-value" id="stat-total-assets">$0.00</div>
+                    </div>
+                    <div class="stat-card profit">
+                        <div class="label">Lợi nhuận ròng ($)</div>
+                        <div class="value privacy-value" id="stat-total-pl">$0.00</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Tỷ lệ thắng (Win Rate)</div>
+                        <div class="value" id="stat-win-rate">0%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Tổng số lệnh</div>
+                        <div class="value" id="stat-total-trades">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Lỗi hay gặp nhất</div>
+                        <div class="value" style="font-size: 1.1rem;" id="stat-common-mistake">-</div>
+                    </div>
+                </div>
+
+                <div class="grid-2-1">
+                    <div class="card chart-container">
+                        <h3 style="margin-bottom: 1.5rem;">Biểu đồ tăng trưởng tài sản (Equity)</h3>
+                        <canvas id="equityChart"></canvas>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 style="margin-bottom: 1.5rem;">Lệnh gần đây</h3>
+                        <div class="compact-list" id="recent-trades-list">
+                            <!-- Trades injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal View (Hidden by default) -->
+            <div id="view-journal" style="display: none;">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3>Tất cả giao dịch</h3>
+                    </div>
+                    <div class="table-header">
+                        <div>Cặp / Vị thế</div>
+                        <div>Entry</div>
+                        <div>Khối lượng</div>
+                        <div>SL / TP</div>
+                        <div>Dự kiến R</div>
+                        <div>Lợi nhuận ($)</div>
+                        <div style="text-align: center;">Kết quả</div>
+                        <div style="text-align: right;">Hành động</div>
+                    </div>
+                    <div id="full-journal-list">
+                        <!-- Full list injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics View -->
+            <div id="view-analytics" style="display: none;">
+                <div class="grid-2-1">
+                    <div class="card">
+                        <h3>Hiệu suất theo Chiến thuật (Setups)</h3>
+                        <canvas id="strategyChart" style="margin-top: 1rem;"></canvas>
+                    </div>
+                    <div class="card">
+                        <h3>Điểm kỷ luật trung bình</h3>
+                        <div class="value" id="avg-discipline-score" style="font-size: 3rem; text-align: center; margin-top: 1rem;">0</div>
+                        <p style="text-align: center; color: var(--text-secondary);">Dựa trên việc tuân thủ TP/SL</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3>Lịch Lợi nhuận (Profit Calendar)</h3>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button class="btn-icon-sm" id="btn-prev-month"><i data-lucide="chevron-left"></i></button>
+                            <span id="calendar-month-year" style="font-weight: 600; min-width: 120px; text-align: center;">Tháng 4, 2026</span>
+                            <button class="btn-icon-sm" id="btn-next-month"><i data-lucide="chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div id="profit-calendar" class="calendar-grid">
+                        <!-- Calendar injected here -->
+                    </div>
+                </div>
+
+                <div class="grid-2-1">
+                    <div class="card">
+                        <h3>Hiệu suất theo Thứ trong tuần</h3>
+                        <canvas id="weekdayChart" style="margin-top: 1rem;"></canvas>
+                    </div>
+                    <div class="card">
+                        <h3>Hiệu suất theo Giờ trong ngày</h3>
+                        <canvas id="hourChart" style="margin-top: 1rem;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="view-settings" style="display: none;">
+                <div class="grid-2-1" style="max-width: 900px; gap: 2rem;">
+                    <div class="card">
+                        <h3 style="margin-bottom: 1.5rem;">Cấu hình tài khoản</h3>
+                        <div class="form-group">
+                            <label>Vốn đầu tư ban đầu (USD)</label>
+                            <input type="number" id="setting-initial-capital" value="1000" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label>Danh sách cặp tiền Ticker (Ngắt bởi dấu phẩy)</label>
+                            <input type="text" id="setting-ticker-symbols" value="BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT" placeholder="BTCUSDT, ETHUSDT...">
+                            <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 0.5rem;">Ví dụ: BTCUSDT, ETHUSDT, BINANCE:SOLUSDT</p>
+                        </div>
+                        <button class="btn-primary" id="btn-save-settings">Lưu cấu hình</button>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 1.5rem;">Đổi mật khẩu</h3>
+                        <form id="change-password-form">
+                            <div class="form-group">
+                                <label>Mật khẩu Cũ</label>
+                                <input type="password" id="setting-old-password" required placeholder="Nhập mật khẩu hiện tại...">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu Mới</label>
+                                <input type="password" id="setting-new-password" required placeholder="Nhập mật khẩu mới...">
+                            </div>
+                            <button type="submit" class="btn-primary" style="background-color: var(--warning-color); color: #fff;">Đổi mật khẩu</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin View -->
+            <div id="view-admin" style="display: none;">
+                <div class="card" style="max-width: 900px;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent-color);"><i data-lucide="shield"></i> Dashboard Quản trị viên</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Danh sách tất cả người dùng và quản lý mật khẩu.</p>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <th style="padding: 1rem; color: var(--text-secondary);">Username</th>
+                                    <th style="padding: 1rem; color: var(--text-secondary);">Email</th>
+                                    <th style="padding: 1rem; color: var(--text-secondary);">Mật khẩu hiện tại</th>
+                                    <th style="padding: 1rem; color: var(--text-secondary);">Mật khẩu mới</th>
+                                    <th style="padding: 1rem; color: var(--text-secondary);">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-users-list">
+                                <!-- Users injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for New/Edit Trade -->
+    <div class="modal-overlay" id="modal-trade">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="trade-modal-title">Thêm lệnh mới</h2>
+                <button id="btn-close-modal" class="btn-icon-close">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="trade-form">
+                <input type="hidden" id="input-trade-id">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Cặp giao dịch</label>
+                        <input type="text" id="input-pair" placeholder="Ví dụ: BTC/USDT" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Vị thế</label>
+                        <select id="input-position" required>
+                            <option value="long">Long (Mua)</option>
+                            <option value="short">Short (Bán)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                         <label>Vốn vào lệnh</label>
+                        <input type="number" id="input-calc-capital" value="1000" step="any" required title="Số tiền làm căn cứ để tính % rủi ro">
+                    </div>
+                    <div class="form-group">
+                         <label>Mức Rủi ro (%) tổng tài sản</label>
+                        <input type="number" id="input-risk-percent" value="1" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá vào (Entry Price)</label>
+                        <input type="number" id="input-entry" required step="any">
+                    </div>
+                    <div class="form-group">
+                        <label>Cắt lỗ (Stop Loss)</label>
+                        <input type="number" id="input-sl" required step="any">
+                    </div>
+                    <div class="form-group">
+                        <label>Chiến thuật (Setup)</label>
+                        <select id="input-setup" required>
+                            <option value="Breakout">Breakout</option>
+                            <option value="Retest">Retest</option>
+                            <option value="Scalp">Scalping</option>
+                            <option value="Swing">Swing Trade</option>
+                            <option value="News">News Trading</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Chốt lời (Take Profit - Dự kiến)</label>
+                        <input type="number" id="input-tp" required step="any">
+                    </div>
+                    <div class="form-group">
+                        <!-- Removed P/L toggle as per request -->
+                    </div>
+                </div>
+
+                <div class="form-grid" style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Khối lượng (Volume)</label>
+                        <div id="calculated-volume" style="font-size: 1.5rem; font-weight: 800; color: var(--success-color);">0.00</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Mức Đòn bẩy (Leverage)</label>
+                        <div id="calculated-leverage" style="font-size: 1.5rem; font-weight: 800; color: #ffab3d;">1.0x</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Dự kiến P/L ($)</label>
+                        <div id="predicted-profit-display" style="font-size: 1.5rem; font-weight: 800; color: #ffab3d;">$0.00</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Dự kiến R-Multiple</label>
+                        <div id="predicted-r-value" style="font-size: 1.5rem; font-weight: 800; color: var(--accent-color);">0.00R</div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group" style="display: none;">
+                        <label>Lợi nhuận (P/L) - Trống nếu chưa chốt</label>
+                        <input type="number" id="input-pl" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label>Tải ảnh biểu đồ</label>
+                        <input type="file" id="input-chart-file" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Lỗi (nếu có)</label>
+                        <select id="input-mistake">
+                            <option value="none">Không có lỗi</option>
+                            <option value="early_exit">Chốt non</option>
+                            <option value="fomo">Fomo</option>
+                            <option value="revenge">Trả thù</option>
+                            <option value="move_sl">Dời SL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-primary" id="btn-cancel" style="background: var(--card-bg); border: 1px solid var(--card-border);">Hủy</button>
+                    <button type="submit" class="btn-primary" id="btn-save-trade">Lưu lệnh</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Closing Trade -->
+    <div class="modal-overlay" id="modal-close-trade">
+        <div class="modal" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2>Chốt lệnh giao dịch</h2>
+                <button id="btn-close-close-modal" class="btn-icon-close">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="close-trade-form">
+                <input type="hidden" id="close-trade-id">
+                <div class="form-group">
+                    <label>Giá chốt lệnh (Exit Price)</label>
+                    <input type="number" id="close-input-exit-price" step="any" required placeholder="Ví dụ: 110.5">
+                </div>
+                <div class="form-group">
+                    <label>Lý do vào lệnh (Review)</label>
+                    <textarea id="close-input-entry-reason" rows="2" placeholder="Ghi lại lý do bạn đã vào lệnh này..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Lý do chốt lệnh</label>
+                    <textarea id="close-input-exit-reason" rows="2" placeholder="Tại sao bạn chốt ở đây?"></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Lỗi (nếu có)</label>
+                        <select id="close-input-mistake">
+                            <option value="none">Không có lỗi</option>
+                            <option value="early_exit">Chốt non</option>
+                            <option value="fomo">Fomo</option>
+                            <option value="revenge">Trả thù</option>
+                            <option value="move_sl">Dời SL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary" id="btn-cancel-close" style="background: var(--card-bg); border: 1px solid var(--card-border);">Hủy</button>
+                    <button type="submit" class="btn-primary">Xác nhận chốt</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Trade Detail -->
+    <div class="modal-overlay" id="modal-detail">
+        <div class="modal" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h2 id="detail-title">Chi tiết lệnh: BTC/USDT</h2>
+                <button id="btn-close-detail-modal" class="btn-icon-close">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="detail-container">
+                <div class="detail-info">
+                    <div class="info-group">
+                        <div class="label">Vị thế</div>
+                        <div class="value" id="detail-position">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Chiến thuật</div>
+                        <div class="value" id="detail-setup">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Entry / SL / TP</div>
+                        <div class="value" id="detail-prices">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Kết quả P/L</div>
+                        <div class="value" id="detail-pl">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Ngày thực hiện</div>
+                        <div class="value" id="detail-date">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Lý do vào lệnh</div>
+                        <div class="value" id="detail-reason" style="font-size: 0.9rem; font-weight: 400; line-height: 1.6;">-</div>
+                    </div>
+                    <div class="info-group">
+                        <div class="label">Lý do chốt lệnh</div>
+                        <div class="value" id="detail-exit-reason" style="font-size: 0.9rem; font-weight: 400; line-height: 1.6;">-</div>
+                    </div>
+                </div>
+                <div class="detail-chart" id="detail-chart-container">
+                    <!-- Image injected here -->
+                    <p style="color: var(--text-secondary); text-align: center;">Không có hình ảnh biểu đồ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Deletion Confirmation -->
+    <div class="modal-overlay" id="modal-confirm-delete">
+        <div class="modal" style="max-width: 400px; text-align: center; padding: 2.5rem;">
+            <div style="margin-bottom: 1rem; color: var(--danger-color); display: flex; justify-content: center;">
+                <i data-lucide="alert-triangle" style="width: 48px; height: 48px;"></i>
+            </div>
+            <h2 style="margin-bottom: 1rem;">Xác nhận xóa lệnh?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.9rem;">Lệnh này và toàn bộ dữ liệu ảnh biểu đồ liên quan sẽ bị xóa vĩnh viễn khỏi trình duyệt.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn-primary" id="btn-cancel-delete" style="background: var(--card-bg); border: 1px solid var(--card-border);">Hủy bỏ</button>
+                <button class="btn-primary" id="btn-confirm-delete" style="background: var(--danger-color);">Đồng ý xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

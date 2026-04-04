@@ -1,0 +1,9 @@
+# Verification Checklist - Trading Journal
+- [ ] Verify "Tổng Tài sản" card and "Eye" icon in header
+- [ ] Test Privacy Mode (click "Eye" and verify `.privacy-active` class)
+- [ ] Open "Thêm lệnh mới" modal
+- [ ] Verify "Nhập Lợi nhuận theo" radio buttons
+- [ ] Verify "Lý do vào lệnh" textarea
+- [ ] Add a trade with "Số tiền ($)" as P/L type
+- [ ] Verify Profit and Total Assets update correctly
+- [ ] Verify Equity Chart is visible

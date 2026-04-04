@@ -1,0 +1,42 @@
+# Walkthrough - Premium Trading Journal
+
+Tôi đã hoàn thành việc xây dựng ứng dụng **Nhật ký Giao dịch (Trading Journal)** cao cấp dành cho Hiếu. Ứng dụng tập trung vào tính thẩm mỹ hiện đại, dễ sử dụng và cung cấp các số liệu phân tích quan trọng để cải thiện kỹ năng giao dịch.
+
+## Các tính năng chính
+
+- **Dashboard Thống kê Nâng cao:** Theo dõi Tổng Tài sản, Lợi nhuận ròng, Tỷ lệ thắng và lỗi hệ thống.
+- **Biểu đồ Tăng trưởng (Equity Curve):** Trực quan hóa quá trình tăng trưởng tài sản của bạn qua từng lệnh giao dịch.
+- **Chế độ Riêng tư (Privacy Mode):** Nhấn nút "Con mắt" để làm mờ các con số tài chính nhạy cảm, giúp bảo mật dữ liệu.
+- **Nhập liệu linh hoạt:** Chọn nhập P/L theo **phần trăm (%)** hoặc **số tiền mặt ($)**.
+- **Tải ảnh biểu đồ (IndexedDB):** Lưu trữ trực tiếp ảnh chụp màn hình biểu đồ vào trình duyệt thay vì sử dụng link.
+- **Ghi chú chi tiết:** Phần lý do vào lệnh hỗ trợ khung văn bản lớn để ghi chép sâu hơn.
+- **Cấu hình tài khoản:** Thiết lập số vốn ban đầu trong phần cài đặt.
+- **Ghi chép Tâm lý & Lý do:** Cho phép lưu lại lý do vào lệnh (TA, News, On-chain) và trạng thái tâm lý để phân tích sau này.
+- **Lịch sử giao dịch:** Danh sách lệnh trực quan, phân biệt rõ ràng các lệnh Long/Short và trạng thái lệnh.
+- **Persistence:** Toàn bộ dữ liệu được lưu trữ an toàn trong `localStorage` của trình duyệt, không bị mất khi tải lại trang.
+
+## Giao diện ứng dụng
+
+Ứng dụng được thiết kế với phong cách **Dark Mode & Glassmorphism**, mang lại cảm giác chuyên nghiệp và đẳng cấp.
+
+![Trading Journal Dashboard](/home/digimed/.gemini/antigravity/brain/d1dc1f2b-2187-4658-a3fd-d9d4097fb11c/closed_trade_result_1775330350749.png)
+*Giao diện Dashboard mới với biểu đồ Equity và các thông số tài sản.*
+
+## Hướng dẫn sử dụng
+
+1. **Thêm lệnh:** Nhấn nút **"Thêm lệnh mới"** màu xanh ở góc trên bên phải.
+2. **Nhập dữ liệu:** Điền đầy đủ các thông số lệnh. Nếu lệnh đã đóng, hãy nhập % P/L thực tế để hệ thống tính toán.
+3. **Theo dõi:** Kiểm tra Dashboard thường xuyên để xem Win Rate và các lỗi bạn hay mắc phải để điều chỉnh chiến thuật.
+
+## Chi tiết kỹ thuật
+
+- **Frontend:** HTML5, Vanilla JavaScript (ES6+), CSS3 (Custom Variables, Flexbox/Grid).
+- **Icons:** Lucide Icons.
+- **Fonts:** Inter (UI) và Roboto Mono (Dữ liệu số).
+- **Data:** JSON storage via `localStorage`.
+
+> [!TIP]
+> Hãy luôn ghi lại tâm lý của mình ngay sau khi vào lệnh. Điều này sẽ giúp bạn nhận ra các mẫu hành vi dẫn đến sai lầm như FOMO hay đánh trả thù (Revenge trading).
+
+> [!IMPORTANT]
+> Vì dữ liệu được lưu trong trình duyệt, nếu bạn xóa cache/dữ liệu duyệt web, nhật ký có thể bị mất. Hãy cân nhắc tính năng xuất CSV trong tương lai nếu bạn muốn lưu trữ lâu dài.

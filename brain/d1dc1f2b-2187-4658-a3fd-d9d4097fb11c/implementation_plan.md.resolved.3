@@ -1,0 +1,60 @@
+# Major Workspace Upgrade: Assets, Privacy & Charting
+
+This update transforms the journal into a more complete portfolio management tool for Hiếu. It includes financial privacy, asset growth tracking, and better trade documentation with image uploads.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Data Storage:** Since we are using a local browser environment, images will be stored in **IndexedDB**. 
+> - **Limit:** While IndexedDB can store several gigabytes, performance may degrade if you upload hundreds of high-res 4K screenshots. 
+> - **Persistence:** These images are stored *only* in this browser. Clearing browser data will remove them.
+
+> [!NOTE]
+> **Privacy Mode:** I will implement a "Toggle Eye" icon that blurs all sensitive financial numbers (Total P/L, Total Assets) but leaves the trade pairs visible for review.
+
+## Proposed Changes
+
+### [UI Enhancement]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- Add **"Tổng tài sản" (Total Assets)** card to the stats grid.
+- Add an **"Eye" icon** next to the header for Privacy Mode.
+- Add a **Settings section** to define "Initial Capital" (Vốn ban đầu).
+- Add a **Canvas element** for the Equity Curve chart (Biểu đồ tăng tài sản).
+- Replace the "Reason" dropdown with a **Textarea**.
+- Replace the "Chart URL" input with a **File Upload input**.
+- Add a toggle in the form to choose between **% P/L** or **Amount P/L**.
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Add `.privacy-hidden` class with `filter: blur(8px)` effect.
+- Add styles for the chart container.
+- Update form layout for better textarea and toggle presentation.
+
+### [Core Logic]
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Asset Calculation:** 
+    - `Current Assets = Initial Capital + Sum(Closed P/L)`.
+- **Privacy Toggle:** Logic to add/remove the blur class.
+- **P/L Conversion:** 
+    - If user enters P/L as an *amount*, calculate the % relative to Margin.
+    - If user enters P/L as a *%*, calculate the amount.
+- **IndexedDB Integration:** 
+    - Function to save Blobs (images) to IndexedDB.
+    - Function to retrieve and generate ObjectURLs for display.
+- **Chart.js Integration:** 
+    - Use `Chart.js` to render a line chart of cumulative P/L over time.
+
+## Open Questions
+
+1. For the **Equity Curve**, should it show a point for *every* trade, or should it group them by day?
+2. Do you want the **Privacy Mode** to stay enabled even after you refresh the page?
+
+## Verification Plan
+
+### Manual Verification
+- Test privacy toggle: verify numbers are blurred.
+- Test P/L toggle: ensure switching between % and Amount works correctly.
+- Upload an image: verify it appears in the trade list after saving and persists after refresh.
+- Chart verification: Add a winning trade and a losing trade, check if the line chart reflects the changes.
+- Settings: Update "Initial Capital" and verify Total Assets updates.

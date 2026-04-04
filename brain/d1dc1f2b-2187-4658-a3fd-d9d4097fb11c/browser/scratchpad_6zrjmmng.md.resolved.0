@@ -1,0 +1,16 @@
+# Edgewonk Feature Analysis for Trading Journal Integration
+
+## Goal
+Identify key features of Edgewonk to integrate into Hieu's trading journal.
+
+## Checklist
+- [ ] Explore edgewonk.com for key features
+- [ ] Identify Trade Management metrics
+- [ ] Identify Setup/Tagging system details
+- [ ] Identify Efficiency/Discipline scores
+- [ ] Identify Advanced Analytics (Performance by Weekday/Hour, etc.)
+- [ ] Summarize features for integration
+
+## Notes
+- Target URL: https://edgewonk.com/
+- Focus: Metrics, Tagging, Discipline, Advanced Analytics

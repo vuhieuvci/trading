@@ -1,0 +1,13 @@
+# Task Verification Plan
+
+## 1. Verify "Thêm lệnh mới" Modal
+- [ ] Open "Thêm lệnh mới" modal.
+- [ ] Click the "Chiến thuật" dropdown.
+- [ ] Verify background (dark) and text color (white) of options.
+
+## 2. Verify "Nhật ký lệnh" Delete Functionality
+- [ ] Navigate to "Nhật ký lệnh".
+- [ ] Click the trash icon for a trade.
+- [ ] Verify custom confirmation modal "Xác nhận xóa lệnh?" appears.
+- [ ] Click "Đồng ý xóa".
+- [ ] Verify trade removal and count updates.

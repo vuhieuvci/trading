@@ -1,0 +1,17 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Your data is private
+Your data is never sold, analyzed, or used to reverse-engineer your strategies. We only access your journal if you explicitly ask us to.
+Your data is safe
+We develop with security at the core, ensuring your trading data is always protected. Independent penetration tests confirm that our systems are safe and reliable.
+You are in good hands
+Edgewonk has been helping traders improve for over 10 years. We are independent, transparent, and here for your trading journey — long term.
+AI-Driven Innovation
+The most intelligent trading journal ever built —
+Augmented by AI
+This isn’t just a trading journal. It’s a personal performance system, driven by AI innovation and built on a decade of trader success stories.
+Instead of spending hours searching for answers, the Edge Finder shows them to you instantly. By reducing analysis to the essentials, it helps you focus on the changes that matter most and turn insight into real trading improvement.
+
+</current_dom>

@@ -1,0 +1,34 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Skip to the main content.
+[0] (565,12)<a href='https://edgewonk.com/help' role='menuitem'>Customer Support />
+[1] (608,12)<a href='https://edgewonk.com/affiliate' role='menuitem'>Affiliate />
+[2] (633,12)<a href='https://edgewonk.com/blog' role='menuitem'>Blog />
+[3] (670,12)<a href='https://edgewonk.com/review' role='menuitem'>Journal Analysis />
+[4] (710,12)<a href='https://edgewonk.com/partner' role='menuitem'>Partner />
+[5] (312,60)<a href='//edgewonk.com/?hsLang=en' id='hs-link-global_header_v2_' />
+	[6] (312,53)<img  />
+[7] (378,53)<a href='https://edgewonk.com'>Home />
+[8] (410,53)<a href='https://edgewonk.com/features'>Features />
+[9] (444,53)<a href='https://edgewonk.com/pricing'>Pricing />
+[10] (492,53)<a href='https://edgewonk.com/import'>Platform Support />
+[11] (662,53)<a class='cta-secondary' href='https://edgewonk.com/pricing?hsLang=en'>BUY NOW />
+[12] (705,53)<a class='cta-tertiary' href='https://edgewonk.app'>LOGIN />
+Automated Trade Imports
+AI-Driven Innovation
+Privacy First - Secure
+Forex
+Stocks
+Futures
+Crypto
+Commodities
+Indices
+Options
+Most journals record what you did.
+Edgewonk tells you what to do next.
+Edgewonk shows you exactly what separates your winning trades from your losing ones, helping you eliminate costly mistakes and double down on what works. Build consistency, confidence, and real progress with every trade you take.
+[13] (497,425)<a class='hero_start_button_b' href='/pricing?hsLang=en'>Buy Edgewonk → />
+
+</current_dom>

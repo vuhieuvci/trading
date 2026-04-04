@@ -1,0 +1,14 @@
+# Task Progress
+
+- [ ] Navigate to http://localhost:8888/
+- [ ] Open "Thêm lệnh mới" modal
+- [ ] Input Entry: 100, SL: 90, TP: 130
+- [ ] Verify "Dự kiến R-Multiple" is 3.00R
+- [ ] Save trade (Long, BTC/USDT, Margin 100, Profit $30)
+- [ ] Go to "Phân tích" (Analytics) view
+- [ ] Verify "Lịch Lợi nhuận" shows +30 (green)
+- [ ] Verify "Hiệu suất theo Chiến thuật" bar chart
+- [ ] Verify "Điểm kỷ luật trung bình" (EW Score) is ~100
+- [ ] Go to "Nhật ký lệnh" view
+- [ ] Verify "R-Value" and "EW Score" columns are populated
+- [ ] Report all findings

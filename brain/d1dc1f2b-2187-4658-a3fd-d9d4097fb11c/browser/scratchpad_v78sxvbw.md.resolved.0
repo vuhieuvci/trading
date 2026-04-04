@@ -1,0 +1,10 @@
+# Trading Journal Test Plan
+- [ ] Open http://localhost:8888/
+- [ ] Add a NEW trade with NO P/L (leave blank)
+- [ ] Verify "Chốt lệnh" button appears for the new trade
+- [ ] Click "Chốt lệnh"
+- [ ] Enter 15 in P/L field in the modal
+- [ ] Select psychology and mistake
+- [ ] Confirm and verify trade is closed with +15%
+- [ ] Verify stats update
+- [ ] Take screenshot of the closed trade

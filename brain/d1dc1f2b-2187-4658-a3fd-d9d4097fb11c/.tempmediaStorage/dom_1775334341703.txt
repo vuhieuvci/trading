@@ -1,0 +1,176 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Hieu's Journal
+Bảng điều khiển
+Nhật ký lệnh
+Phân tích
+Cài đặt
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+Thêm lệnh mới
+Tất cả giao dịch
+Cặp / Vị thế
+Entry
+Khối lượng
+SL / TP
+Dự kiến R
+Lợi nhuận ($)
+Kết quả
+Hành động
+BTC/USDT
+long
+$60000
+0.0020
+SL: 55000
+TP: 70000
+2R
+Đang chạy
+-
+Chốt
+SOL/USDT
+short
+$200
+0.5000
+SL: 220
+TP: 160
+2R
+$-5.00
+LOSS
+0.1x
+BTC/USDT
+long
+$100
+1.0000
+SL: 90
+TP: 130
+3R
++$10.00
+WIN
+0.1x
+BTC/USDT
+long
+$67185
+0.0086
+SL: 67000
+TP: 68000
+4.41R
+$-5.00
+LOSS
+7.3x
+ETH/USDT
+long
+$100
+1.2219
+SL: 90
+TP: 130
+3R
++$97.80
+WIN
+0.0x
+BTC/USDT
+long
+$100
+0.0000
+SL: 90
+TP: 130
+3R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
+$0.00
+LOSS
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+11.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+SOL/USDT
+long
+$150
+0.0000
+SL: 140
+TP: 200
+0R
++$0.00
+WIN
+10.0x
+BTC/USDT
+long
+$67185
+0.0000
+SL: 67000
+TP: 67300
+0R
++$0.00
+WIN
+60.0x
+BTC/USDT
+long
+$60000
+0.0000
+SL: 58000
+TP: 65000
+0R
++$0.00
+WIN
+10.0x
+Chốt lệnh giao dịch
+[0] (637,326)<button class='btn-icon-close' id='btn-close-close-modal' />
+[1] (500,369)<label >Giá chốt lệnh (Exit Price) />
+[2] (500,396)<input id='close-input-exit-price' placeholder='Ví dụ: 110.5' />
+[3] (500,433)<label >Lý do vào lệnh (Review) />
+[4] (500,465)<textarea id='close-input-entry-reason' placeholder='Ghi lại lý do bạn đã vào lệnh này...' />
+[5] (500,512)<label >Lý do chốt lệnh />
+[6] (500,544)<textarea id='close-input-exit-reason' placeholder='Tại sao bạn chốt ở đây?' />
+[7] (500,591)<label >Lỗi (nếu có) />
+[8] (500,618)<select id='close-input-mistake' />
+[9] (512,674)<button class='btn-primary' id='btn-cancel-close'>Hủy />
+[10] (601,674)<button class='btn-primary'>Xác nhận chốt />
+
+</current_dom>

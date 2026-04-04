@@ -1,0 +1,47 @@
+# CUSTOM Tickers & IMPROVED TRADE REVIEW
+
+This update focuses on personalization (customizing your market watchlist) and refining the trade recording workflow by focusing on entry/exit rationale rather than generic psychological states.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **TradingView Watchlist:** You will now be able to enter a list of pairs (e.g., `BTCUSDT, ETHUSDT, SOLUSDT`) in the **Settings** tab. The dashboard ticker will automatically refresh to show your chosen coins.
+
+> [!NOTE]
+> **Rationale Focus:** Based on your request, the **Tâm lý (Psychology)** field will be removed. In its place, the exit workflow will now ask for:
+> 1. **Lý do vào lệnh (Entry Reason):** To be reviewed/confirmed when closing.
+> 2. **Lý do chốt lệnh (Exit Reason):** A new field to document why you decided to exit.
+
+## Proposed Changes
+
+### [Settings & Trade Logic Upgrades]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- **Settings View**: Add a text input for **"Danh sách cặp tiền Ticker"** (e.g., `BINANCE:BTCUSDT, BINANCE:ETHUSDT`).
+- **Trade Entry Form**:
+  - Rename labels to: **"Vốn vào lệnh"** and **"Mức Rủi ro (%) tổng tài sản"**.
+  - Remove **"Tâm lý"** input.
+- **Close Trade Modal**:
+  - Add **"Lý do vào lệnh"** (reviewable/editable).
+  - Add **"Lý do chốt lệnh"** textarea.
+  - Remove **"Tâm lý"** dropdown.
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Dynamic Ticker**: Implement `renderMarketTicker()` function that generates the TradingView iframe based on `settings.tickerSymbols`.
+- **Form Updates**:
+  - Adjust `submit` listeners to handle deleted/renamed fields.
+  - Ensure the exit reasons are saved into the `trades` array.
+- **Journal Rendering**: Update `viewDetail()` to show both the Entry and Exit reasons.
+
+## Open Questions
+
+1. For the ticker symbols, should I provide a few common ones as a default if you leave it blank?
+2. Do you want the "Reason for Entry" to be completely removed from the **New Trade** form and only exist in the **Close** modal, or should it be in both? (Currently planning to move/duplicate to Close modal for better reflection).
+
+## Verification Plan
+
+### Manual Verification
+- **Ticker Update:** Go to Settings, add `BINANCE:DOTUSDT`, save, and verify it appears in the top bar.
+- **Labels:** Check the New Trade modal for the renamed labels.
+- **Exit Review:** Close a trade and verify you can enter both entry/exit rationale. Verify these show up in the "Chi tiết lệnh" modal.
+- **Psychology Removal:** Confirm no psychology fields exist anywhere in the app.

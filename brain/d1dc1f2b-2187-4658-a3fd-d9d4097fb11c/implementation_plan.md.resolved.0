@@ -1,0 +1,70 @@
+# Premium Crypto Trading Journal
+
+Create a highly detailed, professional, and visually stunning trading journal application to help users (like Hiếu) track their trades, manage risk, and improve their trading psychology.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The app will use **Local Storage** for data persistence. This means data is stored locally in the browser and will not be shared across devices.
+> Does this meet the user's needs, or should we consider a backend solution later?
+
+> [!NOTE]
+> The design will focus on a **Dark Mode / Glassmorphism** aesthetic, common in professional trading software (like TradingView or Bloomberg Terminal).
+
+## Proposed Changes
+
+### [Core Application]
+
+#### [NEW] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- Main entry point for the React application.
+- Includes Google Fonts (Inter/Roboto Mono) for a professional feel.
+
+#### [NEW] [src/App.jsx](file:///home/digimed/.gemini/antigravity/src/App.jsx)
+- Root component with routing for:
+  - **Dashboard**: High-level overview of P/L, win rate, and recent activity.
+  - **Journal**: Full list of trades with filtering (Status, Pair, Position).
+  - **Add Trade**: Comprehensive form for new trade entries.
+
+#### [NEW] [src/index.css](file:///home/digimed/.gemini/antigravity/src/index.css)
+- Professional design system:
+  - Colors: Deep Slate (`#0a0b0d`), Neon Green (`#00ff88`), Vibrant Red (`#ff4d4d`), Electric Blue (`#3d7eff`).
+  - Glassmorphism: `backdrop-filter: blur(16px)`, translucent borders.
+  - Custom scrollbars and transitions.
+
+### [Components]
+
+#### [NEW] [src/components/Dashboard.jsx](file:///home/digimed/.gemini/antigravity/src/components/Dashboard.jsx)
+- Stats grid: Net P/L, Total Trades, Win Rate %, Average Leverage.
+- Charts (using a lightweight library like Recharts or simple CSS visualizations for P/L growth).
+
+#### [NEW] [src/components/TradeForm.jsx](file:///home/digimed/.gemini/antigravity/src/components/TradeForm.jsx)
+- Multi-step or grouped form:
+  - **Order Info**: Pair, Position (Long/Short), Type (Spot/Futures), Leverage, Margin.
+  - **Risk Management**: Entry, Stop Loss (SL), Take Profit (TP), Fees tracker.
+  - **Context**: TA/On-chain/News selection, TradingView link.
+  - **Closing/Psych**: P/L % (if closed), Psychology state (Calm, Anxious, FOMO), Common mistakes checklist.
+
+#### [NEW] [src/components/TradeList.jsx](file:///home/digimed/.gemini/antigravity/src/components/TradeList.jsx)
+- A highly readable table/card list showing trade details, status (Win/Loss), and summary metrics.
+
+### [Data Store]
+
+#### [NEW] [src/hooks/useJournal.js](file:///home/digimed/.gemini/antigravity/src/hooks/useJournal.js)
+- Custom React hook for managing trades and persistence via `localStorage`.
+- Includes helper functions for calculating P/L based on leverage and margin.
+
+## Open Questions
+
+1. Should I include a feature to export the journal to CSV?
+2. Would Hiếu prefer specific shortcuts for common trading pairs (BTC, ETH, SOL)?
+
+## Verification Plan
+
+### Automated Tests
+- N/A for this initial phase, focusing on visual and functional correctness.
+
+### Manual Verification
+- Test entry of Long/Short trades with leverage.
+- Verify P/L calculation logic against manual calculations.
+- Test responsive layout on both desktop and mobile views.
+- Ensure 'Psychology' and 'Mistakes' notes are correctly saved and displayed.

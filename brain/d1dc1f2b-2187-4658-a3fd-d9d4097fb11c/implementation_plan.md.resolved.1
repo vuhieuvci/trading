@@ -1,0 +1,64 @@
+# Premium Crypto Trading Journal
+
+Create a highly detailed, professional, and visually stunning trading journal application to help users (like Hiếu) track their trades, manage risk, and improve their trading psychology.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The app will use **Local Storage** for data persistence. This means data is stored locally in the browser and will not be shared across devices.
+> Does this meet the user's needs, or should we consider a backend solution later?
+
+> [!NOTE]
+> The design will focus on a **Dark Mode / Glassmorphism** aesthetic, common in professional trading software (like TradingView or Bloomberg Terminal).
+
+## Proposed Changes
+
+### [Core Application]
+
+#### [NEW] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- Main entry point. Contains the basic layout (header, main container, sidebar).
+- Uses Google Fonts (Inter/Roboto Mono).
+
+#### [NEW] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- Core logic for the application:
+  - **State Management**: Using a simple object for the journal state.
+  - **Trade Input**: Handling form submission.
+  - **Calculations**: Leverage, margin, and P/L formulas.
+  - **Rendering**: Updating the DOM dynamically for the Dashboard and Trade List.
+  - **Persistence**: Using `localStorage`.
+
+#### [NEW] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Professional design system:
+  - Colors: Deep Slate (`#0a0b0d`), Neon Green (`#00ff88`), Vibrant Red (`#ff4d4d`), Electric Blue (`#3d7eff`).
+  - Glassmorphism: `backdrop-filter: blur(16px)`, translucent borders.
+  - Custom scrollbars.
+
+### [UI Elements]
+
+The UI will be divided into modular functions that handle:
+- **Dashboard View**: Stats cards and P/L history.
+- **Trade Form**: Inputs for all trade parameters.
+- **Trade History**: A sortable/filterable table of previous trades.
+- **Modals**: For adding new trades or viewing details.
+
+### [Data Store]
+
+#### [NEW] [src/hooks/useJournal.js](file:///home/digimed/.gemini/antigravity/src/hooks/useJournal.js)
+- Custom React hook for managing trades and persistence via `localStorage`.
+- Includes helper functions for calculating P/L based on leverage and margin.
+
+## Open Questions
+
+1. Should I include a feature to export the journal to CSV?
+2. Would Hiếu prefer specific shortcuts for common trading pairs (BTC, ETH, SOL)?
+
+## Verification Plan
+
+### Automated Tests
+- N/A for this initial phase, focusing on visual and functional correctness.
+
+### Manual Verification
+- Test entry of Long/Short trades with leverage.
+- Verify P/L calculation logic against manual calculations.
+- Test responsive layout on both desktop and mobile views.
+- Ensure 'Psychology' and 'Mistakes' notes are correctly saved and displayed.

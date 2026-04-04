@@ -1,0 +1,47 @@
+Hieu's Journal
+[0] (94,86)<li >Bảng điều khiển />
+[1] (94,127)<li >Nhật ký lệnh />
+[2] (94,166)<li >Phân tích />
+[3] (94,206)<li >Cài đặt />
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+[4] (819,47)<button class='btn-icon' id='btn-privacy-toggle' title='Chế độ riêng tư' />
+[5] (913,47)<button class='btn-primary' id='btn-add-trade'>Thêm lệnh mới />
+Tổng Tài sản
+$1117.80
+Lợi nhuận ròng ($)
+$117.80
+Tỷ lệ thắng (Win Rate)
+78.6%
+Tổng số lệnh
+15
+Lỗi hay gặp nhất
+-
+Biểu đồ tăng trưởng tài sản (Equity)
+Lệnh gần đây
+[6] (852,413)<div  />
+	[7] (796,413)<div >BTC/USDT />
+		[8] (772,422)<span >long />
+	[9] (866,413)<div >Đang chạy />
+	[10] (922,413)<div >4/5/2026 />
+[11] (852,471)<div  />
+	[12] (796,470)<div >BTC/USDT />
+		[13] (772,480)<span >long />
+	[14] (866,470)<div >+$20.00 />
+	[15] (922,470)<div >4/5/2026 />
+[16] (852,528)<div  />
+	[17] (796,528)<div >SOL/USDT />
+		[18] (775,538)<span >short />
+	[19] (866,528)<div >$-5.00 />
+	[20] (922,528)<div >4/5/2026 />
+[21] (852,586)<div  />
+	[22] (796,586)<div >BTC/USDT />
+		[23] (772,596)<span >long />
+	[24] (866,586)<div >+$10.00 />
+	[25] (922,586)<div >4/5/2026 />
+[26] (852,644)<div  />
+	[27] (796,644)<div >BTC/USDT />
+		[28] (772,653)<span >long />
+	[29] (866,644)<div >$-5.00 />
+	[30] (922,644)<div >4/5/2026 />

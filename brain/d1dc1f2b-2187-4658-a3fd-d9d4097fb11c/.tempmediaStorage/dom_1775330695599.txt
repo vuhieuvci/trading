@@ -1,0 +1,45 @@
+Hieu's Journal
+[0] (109,89)<li >Bảng điều khiển />
+[1] (109,130)<li >Nhật ký lệnh />
+[2] (109,171)<li >Phân tích />
+[3] (109,211)<li >Cài đặt />
+Trading Journal v1.0
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+[4] (901,48)<button class='btn-primary' id='btn-add-trade'>Thêm lệnh mới />
+Tổng Lợi nhuận (P/L)
+$29.50
+Tỷ lệ thắng (Win Rate)
+100.0%
+Tổng số lệnh
+3
+Lỗi hay gặp nhất
+Dời SL khi sắp chạm
+Lệnh gần đây
+Cặp/Vị thế
+Entry
+Leverage
+Margin
+P/L (%)
+Trạng thái
+SOL/USDT
+long
+$150
+x10
+$50
++15%
+4/5/2026
+BTC/USDT
+long
+$67185
+x60
+$80
++15%
+4/5/2026
+BTC/USDT
+long
+$60000
+x10
+$100
++10%
+4/5/2026

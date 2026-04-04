@@ -1,0 +1,17 @@
+Hieu's Journal
+[0] (94,86)<li >Bảng điều khiển />
+[1] (94,125)<li >Nhật ký lệnh />
+[2] (94,165)<li >Phân tích />
+[3] (94,205)<li >Cài đặt />
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+[4] (819,47)<button class='btn-icon' id='btn-privacy-toggle' title='Chế độ riêng tư' />
+[5] (913,47)<button class='btn-primary' id='btn-add-trade'>Thêm lệnh mới />
+Cấu hình tài khoản
+[6] (393,171)<label >Vốn đầu tư ban đầu (USD) />
+[7] (393,198)<input id='setting-initial-capital' />
+[8] (393,235)<label >Danh sách cặp tiền Ticker (Ngắt bởi dấu phẩy) />
+[9] (393,261)<input id='setting-ticker-symbols' placeholder='BTCUSDT, ETHUSDT...' />
+Ví dụ: BTCUSDT, ETHUSDT, BINANCE:SOLUSDT
+[10] (278,323)<button class='btn-primary' id='btn-save-settings'>Lưu cấu hình />

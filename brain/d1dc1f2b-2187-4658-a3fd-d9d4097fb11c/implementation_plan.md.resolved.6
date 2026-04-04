@@ -1,0 +1,44 @@
+# EXIT PRICE WORKFLOW & WIN/LOSS TRACKING
+
+This update replaces manual P/L entry with an automated system based on your **Exit Price**, ensuring more accurate accounting and a clearer visual of your performance.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Exit Price Calculation:** When closing a trade, you will now enter the **Giá chốt (Exit Price)**. The system will automatically calculate your profit/loss based on the price difference and your trade volume.
+> - **Long:** `Profit = Volume * (Exit - Entry)`
+> - **Short:** `Profit = Volume * (Entry - Exit)`
+
+> [!NOTE]
+> **Status Badges:** A new column will be added to the journal to clearly mark each closed trade as **WIN** or **LOSS**.
+
+## Proposed Changes
+
+### [Form & Tabular Updates]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- **New Trade Form**: Hide/Remove the P/L input (trades start as "Running" by default).
+- **Close Modal**: Replace the P/L amount input with **"Giá chốt (Exit Price)"**.
+- **Journal Table**: Add a **"Kết quả" (Result)** column for WIN/LOSS badges.
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- New styles for **WIN** (Success background) and **LOSS** (Danger background) badges.
+- Adjust table grid to accommodate the new column.
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Exit Logic**: Update the close trade listener to perform the math:
+  - Calculate `profitAmount` from price delta.
+  - Derive `plPercent` based on the risk taken.
+- **Journal Column**: Logic to determine WIN/LOSS status from the final `profitAmount`.
+
+## Open Questions
+
+1. Do you still want to be able to enter a manual P/L amount in case you have fees or funding rates that affect the final number, or should it strictly be price-based?
+2. Should the **Status** (WIN/LOSS) be determined strictly by P/L > 0, or do you want to handle "Break Even" (Hòa vốn) as a separate status?
+
+## Verification Plan
+
+### Manual Verification
+- **Close Workflow:** Add a trade (Entry 100, Volume 1). Close it at 110. Verify Profit is $10.
+- **Visuals:** Close 3 trades (one profit, one loss, one break even). Verify the WIN/LOSS colors and text appear correctly in the journal.
+- **Old Data:** Ensure existing trades still display correctly with their previously entered P/L.

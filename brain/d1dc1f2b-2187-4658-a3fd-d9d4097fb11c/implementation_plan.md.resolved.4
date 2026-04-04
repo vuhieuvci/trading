@@ -1,0 +1,52 @@
+# Edgewonk-Inspired Professional Upgrade
+
+Integrate advanced analytical tools based on Edgewonk's methodology to help Hiếu improve discipline and strategy performance.
+
+## User Review Required
+
+> [!IMPORTANT]
+> This upgrade will introduce a **Discipline Score (EW Score)**. This means the system will evaluate your performance based on whether you followed your plan (Exit @ TP/SL) or deviated (Manual Close).
+
+> [!NOTE]
+> I will add a **Profit Calendar** and a **Performance by Strategy** chart to the Analytics view.
+
+## Proposed Changes
+
+### [Advanced Analytics]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- Add a new **Analytics Section** with:
+  - **Profit Calendar**: A visual grid showing daily P/L.
+  - **Strategy Performance Chart**: Bar chart for win rates/profits by setup.
+  - **Performance Heatmap**: P/L by Day of Week and Hour.
+- Update **Trade Form** to include:
+  - **Strategy/Setup Selection**: (e.g., Breakout, Scalp, Reversal).
+  - **R-Value calculation**: Showing potential Risk:Reward ratio during entry.
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Design for the **Profit Calendar** grid (color-coded entries).
+- Enhanced layouts for the multiple charts in the Analytics view.
+
+### [Core Logic Update]
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- **Discipline Engine**: 
+  - Calculate **Actual R-Multiple** vs **Planned R-Multiple**.
+  - Calculate the **Potential P/L** (if trade hit TP/SL) to show "Cost of Early Exit."
+- **Data Aggregation**: 
+  - Group trades by **Strategy**, **Day**, and **Hour** for heatmap/bar chart data.
+- **Improved Settings**:
+  - Allow Hiếu to define custom "Setups" in the settings.
+
+## Open Questions
+
+1. Which specific **Setups** (strategies) do you use most often? (I can pre-populate the list).
+2. For the **Profit Calendar**, do you prefer to see the *Total USD Profit* or the *Total % Gain* for each day?
+
+## Verification Plan
+
+### Manual Verification
+- Add trades with specific setups (e.g., Breakout) and verify they appear in the Strategy Bar Chart.
+- Check the Profit Calendar after adding multiple trades on different days.
+- Verify the "R-Multiple" calculation (e.g., 100 SL / 200 TP should show 2R).
+- Verify the Heatmap correctly identifies the most profitable hours.

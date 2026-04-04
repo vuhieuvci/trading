@@ -1,0 +1,183 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Hieu's Journal
+Bảng điều khiển
+Nhật ký lệnh
+Phân tích
+Cài đặt
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+Thêm lệnh mới
+Tất cả giao dịch
+Cặp / Vị thế
+Entry
+Khối lượng
+SL / TP
+Dự kiến R
+Lợi nhuận ($)
+Kết quả
+Hành động
+BTC/USDT
+long
+$60000
+0.0020
+SL: 55000
+TP: 70000
+2R
++$20.00
+WIN
+0.1x
+SOL/USDT
+short
+$200
+0.5000
+SL: 220
+TP: 160
+2R
+$-5.00
+LOSS
+0.1x
+BTC/USDT
+long
+$100
+1.0000
+SL: 90
+TP: 130
+3R
++$10.00
+WIN
+0.1x
+BTC/USDT
+long
+$67185
+0.0086
+SL: 67000
+TP: 68000
+4.41R
+$-5.00
+LOSS
+7.3x
+ETH/USDT
+long
+$100
+1.2219
+SL: 90
+TP: 130
+3R
++$97.80
+WIN
+0.0x
+BTC/USDT
+long
+$100
+0.0000
+SL: 90
+TP: 130
+3R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
+$0.00
+LOSS
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+11.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+SOL/USDT
+long
+$150
+0.0000
+SL: 140
+TP: 200
+0R
++$0.00
+WIN
+10.0x
+BTC/USDT
+long
+$67185
+0.0000
+SL: 67000
+TP: 67300
+0R
++$0.00
+WIN
+60.0x
+BTC/USDT
+long
+$60000
+0.0000
+SL: 58000
+TP: 65000
+0R
++$0.00
+WIN
+10.0x
+Chi tiết lệnh: BTC/USDT
+[0] (818,302)<button class='btn-icon-close' id='btn-close-detail-modal' />
+Vị thế
+long
+Chiến thuật
+Breakout
+Entry / SL / TP
+Entry: 60000 | SL: 55000 | TP: 70000
+Exit: 70000
+Vốn vào: $1000 | Đòn bẩy: 0.1x
+Kết quả P/L
+$20.00
+Ngày thực hiện
+4/5/2026, 3:25:21 AM
+Lý do vào lệnh
+Test entry rationale
+Lý do chốt lệnh
+Test exit rationale
+Không có hình ảnh biểu đồ
+
+</current_dom>

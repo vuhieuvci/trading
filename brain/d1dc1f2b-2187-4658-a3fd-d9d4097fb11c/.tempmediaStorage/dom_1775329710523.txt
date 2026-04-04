@@ -1,0 +1,15 @@
+[0] (946,35)<a class='link_on_top_about' href='/info/en/about' />
+[1] (978,35)<a class='link_on_top_preferences' href='/preferences' />
+[2] (471,204)<input id='q' placeholder='Search for...' />
+[3] (719,204)<button aria-label='clear' class='empty' id='clear_search' />
+[4] (748,204)<button aria-label='search' id='send_search' />
+Powered by
+[5] (354,963)<a href='/info/en/about'>SearXNG />
+- 2026.4.4+7adace694 — a privacy-respecting, open metasearch engine
+[6] (386,973)<a href='https://github.com/searxng/searxng'>Source code />
+|
+[7] (457,973)<a href='https://github.com/searxng/searxng/issues'>Issue tracker />
+|
+Engine stats
+|
+[8] (605,973)<a href='https://searx.space'>Public instances />

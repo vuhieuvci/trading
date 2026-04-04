@@ -1,0 +1,16 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Trade with a
+higher winrate
+and
+bigger winners
+Find the trades that deliver the best results and fine-tune your approach for greater profitability and discover the winning patterns hidden in your trades.
+How Edgewonk helps you:
+Find your most profitable setup and focus on what drives your performance.
+Trade the instrument that fits best to your strategy to maximize your edge.
+Identify the entry strategy with the highest winrate for repeatable success.
+Edgewonk shows your most profitable time of day so you can trade when your edge is strongest.
+
+</current_dom>

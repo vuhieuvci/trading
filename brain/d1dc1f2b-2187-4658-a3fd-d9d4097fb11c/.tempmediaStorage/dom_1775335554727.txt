@@ -1,0 +1,184 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Hieu's Journal
+Bảng điều khiển
+Nhật ký lệnh
+Phân tích
+Cài đặt
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+Thêm lệnh mới
+Tất cả giao dịch
+Cặp / Vị thế
+Entry
+Khối lượng
+SL / TP
+Dự kiến R
+Lợi nhuận ($)
+Kết quả
+Hành động
+SOL/USDT
+short
+$200
+0.5000
+SL: 220
+TP: 160
+2R
+$-5.00
+LOSS
+0.1x
+BTC/USDT
+long
+$100
+1.0000
+SL: 90
+TP: 130
+3R
++$10.00
+WIN
+0.1x
+BTC/USDT
+long
+$67185
+0.0086
+SL: 67000
+TP: 68000
+4.41R
+$-5.00
+LOSS
+7.3x
+ETH/USDT
+long
+$100
+1.2219
+SL: 90
+TP: 130
+3R
++$97.80
+WIN
+0.0x
+BTC/USDT
+long
+$100
+0.0000
+SL: 90
+TP: 130
+3R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
+$0.00
+LOSS
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+11.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+BTC/USDT
+long
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++$0.00
+WIN
+1.0x
+SOL/USDT
+long
+$150
+0.0000
+SL: 140
+TP: 200
+0R
++$0.00
+WIN
+10.0x
+BTC/USDT
+long
+$67185
+0.0000
+SL: 67000
+TP: 67300
+0R
++$0.00
+WIN
+60.0x
+BTC/USDT
+long
+$60000
+0.0000
+SL: 58000
+TP: 65000
+0R
++$0.00
+WIN
+10.0x
+Thêm lệnh mới
+[0] (746,219)<button class='btn-icon-close' id='btn-close-modal' />
+[1] (322,263)<label >Cặp giao dịch />
+[2] (322,290)<input id='input-pair' placeholder='Ví dụ: BTC/USDT' />
+[3] (500,263)<label >Vị thế />
+[4] (500,290)<select id='input-position' />
+[5] (678,263)<label >Vốn vào lệnh />
+[6] (678,290)<input id='input-calc-capital' title='Số tiền làm căn cứ để tính % rủi ro' />
+[7] (322,341)<label >Mức Rủi ro (%) tổng tài sản />
+[8] (322,368)<input id='input-risk-percent' />
+[9] (500,341)<label >Giá vào (Entry Price) />
+[10] (500,368)<input id='input-entry' />
+[11] (678,341)<label >Cắt lỗ (Stop Loss) />
+[12] (678,368)<input id='input-sl' />
+[13] (322,418)<label >Chiến thuật (Setup) />
+[14] (322,445)<select id='input-setup' />
+[15] (366,483)<label >Chốt lời (Take Profit - Dự kiến) />
+[16] (366,510)<input id='input-tp' />
+[17] (330,558)<label >Khối lượng (Volume) />
+0.00
+[18] (500,558)<label >Dự kiến P/L ($) />
+$0.00
+[19] (670,558)<label >Dự kiến R-Multiple />
+0.00R
+[20] (500,630)<label >Tải ảnh biểu đồ />
+[21] (500,658)<input id='input-chart-file' />
+[22] (500,697)<label >Lỗi (nếu có) />
+[23] (500,724)<select id='input-mistake' />
+[24] (645,781)<button class='btn-primary' id='btn-cancel'>Hủy />
+[25] (722,781)<button class='btn-primary' id='btn-save-trade'>Lưu lệnh />
+
+</current_dom>

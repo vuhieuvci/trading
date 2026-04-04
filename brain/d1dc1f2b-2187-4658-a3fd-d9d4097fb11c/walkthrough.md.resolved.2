@@ -1,0 +1,38 @@
+# Walkthrough - Premium Trading Journal
+
+Tôi đã hoàn thành việc xây dựng ứng dụng **Nhật ký Giao dịch (Trading Journal)** cao cấp dành cho Hiếu. Ứng dụng tập trung vào tính thẩm mỹ hiện đại, dễ sử dụng và cung cấp các số liệu phân tích quan trọng để cải thiện kỹ năng giao dịch.
+
+## Các tính năng chính
+
+- **Dashboard Thống kê:** Theo dõi tổng P/L, Tỷ lệ thắng (Win Rate), và xác định lỗi tâm lý/kỹ thuật hay gặp nhất.
+- **Chốt lệnh linh hoạt:** Bạn có thể tạo lệnh "Đang chạy" (để trống P/L) và sau đó nhấn nút **"Chốt lệnh"** để cập nhật kết quả thực tế khi kết thúc giao dịch.
+- **Quản lý rủi ro:** Nhập chi tiết Entry, SL, TP (Dự kiến) và Đòn bẩy. Hệ thống sẽ tự động tính toán lợi nhuận dựa trên ký quỹ (Margin).
+- **Ghi chép Tâm lý & Lý do:** Cho phép lưu lại lý do vào lệnh (TA, News, On-chain) và trạng thái tâm lý để phân tích sau này.
+- **Lịch sử giao dịch:** Danh sách lệnh trực quan, phân biệt rõ ràng các lệnh Long/Short và trạng thái lệnh.
+- **Persistence:** Toàn bộ dữ liệu được lưu trữ an toàn trong `localStorage` của trình duyệt, không bị mất khi tải lại trang.
+
+## Giao diện ứng dụng
+
+Ứng dụng được thiết kế với phong cách **Dark Mode & Glassmorphism**, mang lại cảm giác chuyên nghiệp và đẳng cấp.
+
+![Trading Journal Dashboard](/home/digimed/.gemini/antigravity/brain/d1dc1f2b-2187-4658-a3fd-d9d4097fb11c/trading_journal_dashboard_1775329851598.png)
+*Giao diện Dashboard chính với thống kê và danh sách lệnh gần đây.*
+
+## Hướng dẫn sử dụng
+
+1. **Thêm lệnh:** Nhấn nút **"Thêm lệnh mới"** màu xanh ở góc trên bên phải.
+2. **Nhập dữ liệu:** Điền đầy đủ các thông số lệnh. Nếu lệnh đã đóng, hãy nhập % P/L thực tế để hệ thống tính toán.
+3. **Theo dõi:** Kiểm tra Dashboard thường xuyên để xem Win Rate và các lỗi bạn hay mắc phải để điều chỉnh chiến thuật.
+
+## Chi tiết kỹ thuật
+
+- **Frontend:** HTML5, Vanilla JavaScript (ES6+), CSS3 (Custom Variables, Flexbox/Grid).
+- **Icons:** Lucide Icons.
+- **Fonts:** Inter (UI) và Roboto Mono (Dữ liệu số).
+- **Data:** JSON storage via `localStorage`.
+
+> [!TIP]
+> Hãy luôn ghi lại tâm lý của mình ngay sau khi vào lệnh. Điều này sẽ giúp bạn nhận ra các mẫu hành vi dẫn đến sai lầm như FOMO hay đánh trả thù (Revenge trading).
+
+> [!IMPORTANT]
+> Vì dữ liệu được lưu trong trình duyệt, nếu bạn xóa cache/dữ liệu duyệt web, nhật ký có thể bị mất. Hãy cân nhắc tính năng xuất CSV trong tương lai nếu bạn muốn lưu trữ lâu dài.

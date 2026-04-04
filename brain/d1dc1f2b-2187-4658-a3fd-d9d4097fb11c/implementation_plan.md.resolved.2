@@ -1,0 +1,41 @@
+# Close Order Feature & TP Clarification
+
+Add the ability for users to close an active trade manually and record the final P/L, while emphasizing that the Take Profit (TP) value entered at the start was an expected target.
+
+## User Review Required
+
+> [!NOTE]
+> I will implement a "Chốt lệnh" (Close Order) button that appears only for running trades. When clicked, it will ask for the final P/L % and any updated psychology/mistake notes.
+
+## Proposed Changes
+
+### [Core Logic]
+
+#### [MODIFY] [script.js](file:///home/digimed/.gemini/antigravity/script.js)
+- Add `closeTrade(id)` function.
+- Update `renderTradeToRecent` and `renderTradeToFull` to include a "Chốt" button for trades with `pl === null`.
+- Update the UI to label TP as "TP (Dự kiến)" to match the user's request.
+
+#### [MODIFY] [styles.css](file:///home/digimed/.gemini/antigravity/styles.css)
+- Add styles for the "Chốt lệnh" button (e.g., a subtle border or a specific accent color).
+
+### [UI Elements]
+
+#### [MODIFY] [index.html](file:///home/digimed/.gemini/antigravity/index.html)
+- Add a new modal `modal-close-trade` specifically for closing trades, containing:
+  - Final P/L % input.
+  - Psychology update.
+  - Mistake selection.
+
+## Open Questions
+
+1. Once a trade is closed, should I also allow editing the "Entry Price" or "Margin" if they changed during the trade (e.g., DCA)?
+2. Would you like to automatically calculate the P/L % if you provide the "Exit Price" instead?
+
+## Verification Plan
+
+### Manual Verification
+- Create a new trade without a P/L (Running mode).
+- Click the "Chốt lệnh" button in the history or dashboard.
+- Enter a P/L value in the modal and save.
+- Verify that the trade status changes from "Đang chạy" to the final P/L and stats update accordingly.

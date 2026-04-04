@@ -1,0 +1,168 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Hieu's Journal
+[0] (94,86)<li >Bảng điều khiển />
+[1] (94,126)<li >Nhật ký lệnh />
+[2] (94,166)<li >Phân tích />
+[3] (94,206)<li >Cài đặt />
+Trading Journal v1.5
+Chào buổi sáng, Hiếu!
+Hôm nay kế hoạch giao dịch của bạn thế nào?
+[4] (819,47)<button class='btn-icon' id='btn-privacy-toggle' title='Chế độ riêng tư' />
+[5] (913,47)<button class='btn-primary' id='btn-add-trade'>Thêm lệnh mới />
+Tất cả giao dịch
+Cặp/Vị thế
+Entry
+Khối lượng
+SL / TP (Dự kiến)
+R-Value
+P/L
+Kết quả
+Hành động
+[6] (308,206)<div >SOL/USDT />
+	[7] (325,208)<span >short />
+$200
+0.5000
+SL: 220
+TP: 160
+2R
+-50.0%
+LOSS
+0.1x
+[8] (912,206)<button class='btn-sm btn-icon-sm' />
+[9] (308,254)<div >BTC/USDT />
+	[10] (322,255)<span >long />
+$100
+1.0000
+SL: 90
+TP: 130
+3R
++100.0%
+WIN
+0.1x
+[11] (912,254)<button class='btn-sm btn-icon-sm' />
+[12] (308,301)<div >BTC/USDT />
+	[13] (322,303)<span >long />
+$67185
+0.0086
+SL: 67000
+TP: 68000
+4.41R
+-312.5%
+LOSS
+7.3x
+[14] (913,301)<button class='btn-sm btn-icon-sm' />
+[15] (308,349)<div >ETH/USDT />
+	[16] (322,350)<span >long />
+$100
+1.2219
+SL: 90
+TP: 130
+3R
++266.8%
+WIN
+0.0x
+[17] (914,349)<button class='btn-sm btn-icon-sm' />
+[18] (308,396)<div >BTC/USDT />
+	[19] (322,397)<span >long />
+$100
+0.0000
+SL: 90
+TP: 130
+3R
++30.0%
+WIN
+1.0x
+[20] (913,396)<button class='btn-sm btn-icon-sm' />
+[21] (308,443)<div >BTC/USDT />
+	[22] (322,445)<span >long />
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
+-15.0%
+LOSS
+1.0x
+[23] (913,443)<button class='btn-sm btn-icon-sm' />
+[24] (308,491)<div >BTC/USDT />
+	[25] (322,492)<span >long />
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++20.0%
+WIN
+1.0x
+[26] (913,491)<button class='btn-sm btn-icon-sm' />
+[27] (308,538)<div >BTC/USDT />
+	[28] (322,539)<span >long />
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++20.0%
+WIN
+11.0x
+[29] (916,538)<button class='btn-sm btn-icon-sm' />
+[30] (308,585)<div >BTC/USDT />
+	[31] (322,587)<span >long />
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++20.0%
+WIN
+1.0x
+[32] (913,585)<button class='btn-sm btn-icon-sm' />
+[33] (308,633)<div >BTC/USDT />
+	[34] (322,634)<span >long />
+$30000
+0.0000
+SL: 29000
+TP: 35000
+0R
++20.0%
+WIN
+1.0x
+[35] (913,633)<button class='btn-sm btn-icon-sm' />
+[36] (308,680)<div >SOL/USDT />
+	[37] (322,682)<span >long />
+$150
+0.0000
+SL: 140
+TP: 200
+0R
++15.0%
+WIN
+10.0x
+[38] (918,680)<button class='btn-sm btn-icon-sm' />
+[39] (308,728)<div >BTC/USDT />
+	[40] (322,729)<span >long />
+$67185
+0.0000
+SL: 67000
+TP: 67300
+0R
++15.0%
+WIN
+60.0x
+[41] (919,728)<button class='btn-sm btn-icon-sm' />
+[42] (308,775)<div >BTC/USDT />
+	[43] (322,776)<span >long />
+$60000
+0.0000
+SL: 58000
+TP: 65000
+0R
++10.0%
+WIN
+10.0x
+[44] (918,775)<button class='btn-sm btn-icon-sm' />
+
+</current_dom>
