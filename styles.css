@@ -248,7 +248,7 @@ header {
 /* Table Section */
 .table-header {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr 0.8fr 0.8fr 1fr 0.8fr 1fr;
   padding: 1rem;
   border-bottom: 1px solid var(--card-border);
   color: var(--text-secondary);
@@ -258,7 +258,7 @@ header {
 
 .trade-row {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr 0.8fr 0.8fr 1fr 0.8fr 1fr;
   padding: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   align-items: center;

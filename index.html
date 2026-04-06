@@ -23,9 +23,9 @@
             
             <div id="auth-form-login">
                 <form id="login-form">
-                    <div class="form-group">
-                        <label>Tên đăng nhập</label>
-                        <input type="text" id="login-username" required placeholder="Nhập tên đăng nhập...">
+                    <div class="form-group" style="position: relative;">
+                        <label>Email</label>
+                        <input type="email" id="login-username" required placeholder="Nhập địa chỉ email...">
                     </div>
                     <div class="form-group" style="position: relative;">
                         <label>Mật khẩu</label>
@@ -41,10 +41,6 @@
 
             <div id="auth-form-register" style="display: none;">
                 <form id="register-form">
-                    <div class="form-group">
-                        <label>Tên đăng nhập mới</label>
-                        <input type="text" id="register-username" required placeholder="Tạo tên đăng nhập...">
-                    </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" id="register-email" required placeholder="Nhập địa chỉ email...">
@@ -171,6 +167,7 @@
                         <div>SL / TP</div>
                         <div>Dự kiến R</div>
                         <div>Lợi nhuận ($)</div>
+                        <div style="text-align: center;">P/L Chưa chốt</div>
                         <div style="text-align: center;">Kết quả</div>
                         <div style="text-align: right;">Hành động</div>
                     </div>
@@ -371,17 +368,9 @@
                     </div>
                 </div>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Lỗi (nếu có)</label>
-                        <select id="input-mistake">
-                            <option value="none">Không có lỗi</option>
-                            <option value="early_exit">Chốt non</option>
-                            <option value="fomo">Fomo</option>
-                            <option value="revenge">Trả thù</option>
-                            <option value="move_sl">Dời SL</option>
-                        </select>
-                    </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Lý do vào lệnh (Entry notes)</label>
+                    <textarea id="input-reason" rows="2" placeholder="Ghi lại lý do hoặc cơ sở phân tích để vào lệnh này..."></textarea>
                 </div>
 
                 <div class="form-actions">
@@ -499,7 +488,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
     <script>
         lucide.createIcons();
     </script>
